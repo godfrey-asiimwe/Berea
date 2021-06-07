@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{sermon.title}}</h1>
+
+{{sermon.content}}
+
+<hr/>
+
+<a href="{% url 'listing' %}">All Sermons</a>
+{% endblock content %}

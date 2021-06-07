@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Sermon Listing</h1>
+<ul>
+{% for sermon in sermons %}
+  <li> <a href="{% url 'view_sermon' sermon.id %}">{{sermon.title}}</a> </li>
+{% endfor %}
+</ul>
+{% endblock content %}
