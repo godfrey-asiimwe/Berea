@@ -36,6 +36,10 @@ def private_place(request):
     return HttpResponse("Shhh, members only!", content_type="text/plain")
 
 
+def DashBoard(request):
+    return render(request, 'index.html')
+
+
 def listing(request):
     data = {
         "sermons": Sermon.objects.all(),
