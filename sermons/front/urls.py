@@ -3,7 +3,6 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
     path("", views.DashBoard, name="dashboard"),
     path("view_sermon/<int:sermon_id>/", views.view_sermon, name="view_sermon"),
     path("see_request/", views.see_request),
