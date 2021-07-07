@@ -123,3 +123,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+LOGOUT_REDIRECT_URL = ''
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Base url to serve media files
+MEDIA_URL = '/doc/'
+
+# Path where media is stored
+MEDIA_ROOT = os.path.join(BASE_DIR, 'doc/')

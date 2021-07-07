@@ -5,6 +5,7 @@ from django.shortcuts import render, get_object_or_404
 # Create your views here.
 from .models import Sermon
 
+
 def see_request(request):
     text = f"""
         Some attributes of the HttpRequest object:
@@ -17,6 +18,7 @@ def see_request(request):
     """
 
     return HttpResponse(text, content_type="text/plain")
+
 
 def user_info(request):
     text = f"""
@@ -31,13 +33,22 @@ def user_info(request):
 
     return HttpResponse(text, content_type="text/plain")
 
+
 @login_required
 def private_place(request):
     return HttpResponse("Shhh, members only!", content_type="text/plain")
 
 
 def DashBoard(request):
-    return render(request, 'index.html')
+    sermon = Sermon.objects.order_by('date_made').last()
+    sermons = Sermon.objects.order_by('-date_made')[1:3]
+
+    context = {'sermon': sermon, 'sermons': sermons}
+    return render(request, 'index.html', context)
+
+
+def aboutUs(request):
+    return render(request, 'aboutus.html')
 
 
 def listing(request):
@@ -47,6 +58,7 @@ def listing(request):
 
     return render(request, "listing.html", data)
 
+
 def view_sermon(request, sermon_id):
     sermon = get_object_or_404(Sermon, id=sermon_id)
     data = {
@@ -55,7 +67,7 @@ def view_sermon(request, sermon_id):
 
     return render(request, "view_sermon.html", data)
 
+
 @user_passes_test(lambda user: user.is_staff)
 def staff_place(request):
     return HttpResponse("Employees must wash hands", content_type="text/plain")
-
