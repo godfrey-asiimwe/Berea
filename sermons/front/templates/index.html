@@ -70,21 +70,23 @@
     <section id="design" class="" style="margin-bottom:0px;padding-top:0px !important;">
         <div class="container">
             <div class="row">
+                  {% for serm2 in sermon2 %}
                 <div class="col-lg-5 d-none d-lg-block">
-                    <img src="../static/img/3.jpg" alt="user flow" class="img-fluid">
+                    <img src="doc/{{serm2.image}}" alt="user flow" class="img-fluid">
                 </div>
                 <div class="col-lg-7 pl-lg-5 col-md-12">
-                    <div class="badge badge-primary mb-3">Article</div>
-                    <h2>He Has Not Failed Me Yet</h2>
-                    <p class="lead">As he restates his love for her, she calms down. He reminds her of their life together.
-                        He reminds her of their happy memories. He reminds her of things long forgotten.
-                        And then, from deep within, she recognizes that she should not be afraid. She knows that she is safe.</p>
+                    <div class="badge badge-primary mb-3">{{serm2.category}}</div>
+                    <h2>{{serm2.title}}</h2>
+                    <p class="lead">
+                        {{serm2.subtitle|truncatewords:50 }}
+                    </p>
                     <div class="mt-4">
                         <a href="" class="link-icon">
-                            View More<i class="fas fa-chevron-right"></i>
+                           {{serm.author}} <i class="fas fa-user"></i>
                         </a>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -103,274 +105,86 @@
    <section class="" style="margin-bottom:0px;padding-top:0px !important;">
         <div class="container">
             <div class="row">
+                 {% for serm2 in sermon3 %}
                 <div class="col-lg-7 pl-lg-5 col-md-12">
-                    <div class="badge badge-primary mb-3"></div>
-                    <h2>The <span class="text-primary">Family</span> of God in <span class="text-primary">Heaven</span> and on <span class="text-primary">Earth</span> </h2>
-                    <p class="lead">The living and active word of God pierced into his depths and addressed his innermost thoughts (Hebrews 4:12).
-                        He encountered the Truth and the Life who gave him the sight of faith that healed his blindness (John 9:39).
-                        And the enlightened eyes of his heart told him a different story (Ephesians 1:18).</p>
+                    <div class="badge badge-primary mb-3">{{serm2.category}}</div>
+                    <h2>{{serm2.title}}</h2>
+                    <p class="lead">
+                        {{serm2.subtitle|truncatewords:50 }}
+                    </p>
                     <div class="mt-4">
                         <a href="" class="link-icon">
-                            View More<i class="fas fa-chevron-right"></i>
+                           {{serm.author}} <i class="fas fa-user"></i>
                         </a>
                     </div>
                 </div>
-                 <div class="col-lg-5 d-none d-lg-block">
-                    <img src="../static/img/3.jpg" alt="user flow" class="img-fluid">
+                <div class="col-lg-5 d-none d-lg-block">
+                    <img src="doc/{{serm2.image}}" alt="user flow" class="img-fluid">
                 </div>
+                {% endfor %}
             </div>
         </div>
     </section>
     <div class="callout container">
-            <div class="row">
-                <div class="col-lg-3 col-md-12 col-12 col-sm-12">
-                    <div class="card__inner">
-                      <a class="card__shadow" data-segment="" data-segment-meta="null" href="/articles/why-doesnt-my-church-share-the-gospel"><div class="card__inner">
-                          <div class="card--resource__image--landscape">
-                          <img  width="100%" src="../static/img/1.jpg" class=" lazyloaded">
-                          </div>
-                          <div class="card--resource__body">
-                              <h3 class="card--resource__subtitle">Four Ways to Encourage Evangelism</h3>
-                              <div class="card--resource__date">Jun 24, 2021</div>
-                              <div class="card--resource__text">
-                                  Do you want your church to grow in evangelism? Lead by example, offer basic training,
-                                  make room for hospitality, and rethink what numbers you celebrate.
-                              </div>
-                          </div>
-                          <div class="card--resource__footer">
-                          <div class="card__author">
-                          <img class="card__author-image" src="https://dg.imgix.net/jeff-vanderstelt-uvuogxdz-en/square/jeff-vanderstelt-uvuogxdz.jpg?ts=1495480855&amp;ixlib=rails-4.2.0&amp;auto=format%2Ccompress&amp;fit=min&amp;w=30&amp;h=30&amp;dpr=2&amp;ch=Width%2CDPR">
-                          <span class="card__author-text">
-                          Jeff Vanderstelt
-                          </span>
-                          </div>
-
-                          <span class="card--collapsed__date">Jun 24, 2021</span>
-                          <span class="card__share-count">
-                          69 Shares
-                          </span>
-                          </div>
-                          </div>
-                          </a>
-                    </div>
+        <div class="row">
+            {% for serm in sermon5 %}
+        <div class="col-lg-3 col-md-12 col-12 col-sm-12">
+            <div class="card__inner">
+              <a class="card__shadow" data-segment="" data-segment-meta="null" href=""><div class="card__inner">
+                  <div class="card--resource__image--landscape">
+                  <img  width="100%" src="doc/{{serm.image}}" class=" lazyloaded">
                   </div>
-                <div class="col-lg-3 col-md-12 col-12 col-sm-12">
-                    <div class="card__inner">
-                      <a class="card__shadow" data-segment="" data-segment-meta="null" href="/articles/why-doesnt-my-church-share-the-gospel"><div class="card__inner">
-                          <div class="card--resource__image--landscape">
-                          <img  width="100%" src="../static/img/2.jpg" class="lazyloaded">
-                          </div>
-                          <div class="card--resource__body">
-                              <h3 class="card--resource__subtitle">Four Ways to Encourage Evangelism</h3>
-                              <div class="card--resource__date">Jun 24, 2021</div>
-                              <div class="card--resource__text">Do you want your church to grow in evangelism? Lead by example, offer basic training, make room for hospitality, and rethink what numbers you celebrate.
-
-
-                              </div>
-                          </div>
-                          <div class="card--resource__footer">
-                          <div class="card__author">
-                          <img class="card__author-image" src="https://dg.imgix.net/jeff-vanderstelt-uvuogxdz-en/square/jeff-vanderstelt-uvuogxdz.jpg?ts=1495480855&amp;ixlib=rails-4.2.0&amp;auto=format%2Ccompress&amp;fit=min&amp;w=30&amp;h=30&amp;dpr=2&amp;ch=Width%2CDPR">
-                          <span class="card__author-text">
-                          Jeff Vanderstelt
-                          </span>
-                          </div>
-
-                          <span class="card--collapsed__date">Jun 24, 2021</span>
-                          <span class="card__share-count">
-                          69 Shares
-                          </span>
-                          </div>
-                          </div>
-                          </a>
-                    </div>
+                  <div class="card--resource__body">
+                      <h3 class="card--resource__subtitle">{{serm.title}}</h3>
+                      <div class="card--resource__date">{{serm.date_made}}</div>
+                      <div class="card--resource__text">
+                          {{serm.subtitle|truncatewords:50 }}
+                      </div>
                   </div>
-                <div class="col-lg-3 col-md-12 col-12 col-sm-12">
-                    <div class="card__inner">
-                      <a class="card__shadow" data-segment="" data-segment-meta="null" href="/articles/why-doesnt-my-church-share-the-gospel"><div class="card__inner">
-                          <div class="card--resource__image--landscape">
-                          <img  width="100%" src="../static/img/3.jpg" class="lazyloaded">
-                          </div>
-                          <div class="card--resource__body">
-                              <h3 class="card--resource__subtitle">Four Ways to Encourage Evangelism</h3>
-                              <div class="card--resource__date">Jun 24, 2021</div>
-                              <div class="card--resource__text">
-                                  Do you want your church to grow in evangelism? Lead by example, offer basic training, make room for hospitality, and rethink what numbers you celebrate.
-                              </div>
-                          </div>
-                          <div class="card--resource__footer">
-                          <div class="card__author">
-                          <img class="card__author-image" src="https://dg.imgix.net/jeff-vanderstelt-uvuogxdz-en/square/jeff-vanderstelt-uvuogxdz.jpg?ts=1495480855&amp;ixlib=rails-4.2.0&amp;auto=format%2Ccompress&amp;fit=min&amp;w=30&amp;h=30&amp;dpr=2&amp;ch=Width%2CDPR">
-                          <span class="card__author-text">
-                          Jeff Vanderstelt
-                          </span>
-                          </div>
-
-                          <span class="card--collapsed__date">Jun 24, 2021</span>
-                          <span class="card__share-count">
-                          69 Shares
-                          </span>
-                          </div>
-                          </div>
-                          </a>
-                    </div>
+                  <div class="card--resource__footer">
+                  <div class="card__author">
+                  <img class="card__author-image" src="doc/{{serm.author.image}}">
+                  <span class="card__author-text">
+                   {{serm.author}}
+                  </span>
                   </div>
-                <div class="col-lg-3 col-md-12 col-12 col-sm-12">
-                    <div class="card__inner">
-                      <a class="card__shadow" data-segment="" data-segment-meta="null" href="/articles/why-doesnt-my-church-share-the-gospel"><div class="card__inner">
-                          <div class="card--resource__image--landscape">
-                          <img  width="100%" src="../static/img/3.jpg" class="lazyloaded">
-                          </div>
-                          <div class="card--resource__body">
-                              <h3 class="card--resource__subtitle">Four Ways to Encourage Evangelism</h3>
-                              <div class="card--resource__date">Jun 24, 2021</div>
-                              <div class="card--resource__text">
-                                  Do you want your church to grow in evangelism? Lead by example, offer basic training, make room for hospitality, and rethink what numbers you celebrate.
-                              </div>
-                          </div>
-                          <div class="card--resource__footer">
-                          <div class="card__author">
-                          <img class="card__author-image" src="https://dg.imgix.net/jeff-vanderstelt-uvuogxdz-en/square/jeff-vanderstelt-uvuogxdz.jpg?ts=1495480855&amp;ixlib=rails-4.2.0&amp;auto=format%2Ccompress&amp;fit=min&amp;w=30&amp;h=30&amp;dpr=2&amp;ch=Width%2CDPR">
-                          <span class="card__author-text">
-                          Jeff Vanderstelt
-                          </span>
-                          </div>
-
-                          <span class="card--collapsed__date">Jun 24, 2021</span>
-                          <span class="card__share-count">
-                          69 Shares
-                          </span>
-                          </div>
-                          </div>
-                          </a>
-                    </div>
                   </div>
+                  </div>
+                  </a>
             </div>
+          </div>
+        {% endfor %}
         </div>
+    </div>
     <div class="callout container">
         <div class="row">
-            <div class="col-lg-3 col-md-12 col-12 col-sm-12">
-                <div class="card__inner">
-                  <a class="card__shadow" data-segment="" data-segment-meta="null" href="/articles/why-doesnt-my-church-share-the-gospel"><div class="card__inner">
-                      <div class="card--resource__image--landscape">
-                      <img  width="100%" src="../static/img/1.jpg" class=" lazyloaded">
+            {% for serm in sermon6 %}
+        <div class="col-lg-3 col-md-12 col-12 col-sm-12">
+            <div class="card__inner">
+              <a class="card__shadow" data-segment="" data-segment-meta="null" href=""><div class="card__inner">
+                  <div class="card--resource__image--landscape">
+                  <img  width="100%" src="doc/{{serm.image}}" class=" lazyloaded">
+                  </div>
+                  <div class="card--resource__body">
+                      <h3 class="card--resource__subtitle">{{serm.title}}</h3>
+                      <div class="card--resource__date">{{serm.date_made}}</div>
+                      <div class="card--resource__text">
+                          {{serm.subtitle|truncatewords:50 }}
                       </div>
-                      <div class="card--resource__body">
-                          <h3 class="card--resource__subtitle">Four Ways to Encourage Evangelism</h3>
-                          <div class="card--resource__date">Jun 24, 2021</div>
-                          <div class="card--resource__text">
-                              Do you want your church to grow in evangelism? Lead by example, offer basic training,
-                              make room for hospitality, and rethink what numbers you celebrate.
-                          </div>
-                      </div>
-                      <div class="card--resource__footer">
-                      <div class="card__author">
-                      <img class="card__author-image" src="https://dg.imgix.net/jeff-vanderstelt-uvuogxdz-en/square/jeff-vanderstelt-uvuogxdz.jpg?ts=1495480855&amp;ixlib=rails-4.2.0&amp;auto=format%2Ccompress&amp;fit=min&amp;w=30&amp;h=30&amp;dpr=2&amp;ch=Width%2CDPR">
-                      <span class="card__author-text">
-                      Jeff Vanderstelt
-                      </span>
-                      </div>
-
-                      <span class="card--collapsed__date">Jun 24, 2021</span>
-                      <span class="card__share-count">
-                      69 Shares
-                      </span>
-                      </div>
-                      </div>
-                      </a>
-                </div>
-              </div>
-            <div class="col-lg-3 col-md-12 col-12 col-sm-12">
-                <div class="card__inner">
-                  <a class="card__shadow" data-segment="" data-segment-meta="null" href="/articles/why-doesnt-my-church-share-the-gospel"><div class="card__inner">
-                      <div class="card--resource__image--landscape">
-                      <img  width="100%" src="../static/img/2.jpg" class="lazyloaded">
-                      </div>
-                      <div class="card--resource__body">
-                          <h3 class="card--resource__subtitle">Four Ways to Encourage Evangelism</h3>
-                          <div class="card--resource__date">Jun 24, 2021</div>
-                          <div class="card--resource__text">Do you want your church to grow in evangelism? Lead by example, offer basic training, make room for hospitality, and rethink what numbers you celebrate.
-
-
-                          </div>
-                      </div>
-                      <div class="card--resource__footer">
-                      <div class="card__author">
-                      <img class="card__author-image" src="https://dg.imgix.net/jeff-vanderstelt-uvuogxdz-en/square/jeff-vanderstelt-uvuogxdz.jpg?ts=1495480855&amp;ixlib=rails-4.2.0&amp;auto=format%2Ccompress&amp;fit=min&amp;w=30&amp;h=30&amp;dpr=2&amp;ch=Width%2CDPR">
-                      <span class="card__author-text">
-                      Jeff Vanderstelt
-                      </span>
-                      </div>
-
-                      <span class="card--collapsed__date">Jun 24, 2021</span>
-                      <span class="card__share-count">
-                      69 Shares
-                      </span>
-                      </div>
-                      </div>
-                      </a>
-                </div>
-              </div>
-            <div class="col-lg-3 col-md-12 col-12 col-sm-12">
-                <div class="card__inner">
-                  <a class="card__shadow" data-segment="" data-segment-meta="null" href="/articles/why-doesnt-my-church-share-the-gospel"><div class="card__inner">
-                      <div class="card--resource__image--landscape">
-                      <img  width="100%" src="../static/img/3.jpg" class="lazyloaded">
-                      </div>
-                      <div class="card--resource__body">
-                          <h3 class="card--resource__subtitle">Four Ways to Encourage Evangelism</h3>
-                          <div class="card--resource__date">Jun 24, 2021</div>
-                          <div class="card--resource__text">
-                              Do you want your church to grow in evangelism? Lead by example, offer basic training, make room for hospitality, and rethink what numbers you celebrate.
-                          </div>
-                      </div>
-                      <div class="card--resource__footer">
-                      <div class="card__author">
-                      <img class="card__author-image" src="https://dg.imgix.net/jeff-vanderstelt-uvuogxdz-en/square/jeff-vanderstelt-uvuogxdz.jpg?ts=1495480855&amp;ixlib=rails-4.2.0&amp;auto=format%2Ccompress&amp;fit=min&amp;w=30&amp;h=30&amp;dpr=2&amp;ch=Width%2CDPR">
-                      <span class="card__author-text">
-                      Jeff Vanderstelt
-                      </span>
-                      </div>
-
-                      <span class="card--collapsed__date">Jun 24, 2021</span>
-                      <span class="card__share-count">
-                      69 Shares
-                      </span>
-                      </div>
-                      </div>
-                      </a>
-                </div>
-              </div>
-            <div class="col-lg-3 col-md-12 col-12 col-sm-12">
-                <div class="card__inner">
-                  <a class="card__shadow" data-segment="" data-segment-meta="null" href="/articles/why-doesnt-my-church-share-the-gospel"><div class="card__inner">
-                      <div class="card--resource__image--landscape">
-                      <img  width="100%" src="../static/img/3.jpg" class="lazyloaded">
-                      </div>
-                      <div class="card--resource__body">
-                          <h3 class="card--resource__subtitle">Four Ways to Encourage Evangelism</h3>
-                          <div class="card--resource__date">Jun 24, 2021</div>
-                          <div class="card--resource__text">
-                              Do you want your church to grow in evangelism? Lead by example, offer basic training, make room for hospitality, and rethink what numbers you celebrate.
-                          </div>
-                      </div>
-                      <div class="card--resource__footer">
-                      <div class="card__author">
-                      <img class="card__author-image" src="https://dg.imgix.net/jeff-vanderstelt-uvuogxdz-en/square/jeff-vanderstelt-uvuogxdz.jpg?ts=1495480855&amp;ixlib=rails-4.2.0&amp;auto=format%2Ccompress&amp;fit=min&amp;w=30&amp;h=30&amp;dpr=2&amp;ch=Width%2CDPR">
-                      <span class="card__author-text">
-                      Jeff Vanderstelt
-                      </span>
-                      </div>
-
-                      <span class="card--collapsed__date">Jun 24, 2021</span>
-                      <span class="card__share-count">
-                      69 Shares
-                      </span>
-                      </div>
-                      </div>
-                      </a>
-                </div>
-              </div>
+                  </div>
+                  <div class="card--resource__footer">
+                  <div class="card__author">
+                  <img class="card__author-image" src="doc/{{serm.author.image}}">
+                  <span class="card__author-text">
+                   {{serm.author}}
+                  </span>
+                  </div>
+                  </div>
+                  </div>
+                  </a>
+            </div>
+          </div>
+        {% endfor %}
         </div>
     </div>
 {% endblock %}

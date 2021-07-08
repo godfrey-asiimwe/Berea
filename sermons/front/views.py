@@ -41,9 +41,13 @@ def private_place(request):
 
 def DashBoard(request):
     sermon = Sermon.objects.order_by('date_made').last()
-    sermons = Sermon.objects.order_by('-date_made')[1:3]
+    sermons = Sermon.objects.order_by('-date_made')[1:4]
+    sermon2 = Sermon.objects.order_by('-date_made')[4:5]
+    sermon3 = Sermon.objects.order_by('-date_made')[5:6]
+    sermon5 = Sermon.objects.order_by('-date_made')[6:10]
+    sermon6 = Sermon.objects.order_by('-date_made')[10:14]
 
-    context = {'sermon': sermon, 'sermons': sermons}
+    context = {'sermon': sermon, 'sermons': sermons, 'sermon2': sermon2, 'sermon3': sermon3, 'sermon5':sermon5,'sermon6':sermon6}
     return render(request, 'index.html', context)
 
 
