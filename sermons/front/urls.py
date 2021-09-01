@@ -10,7 +10,9 @@ from django.conf import settings
 urlpatterns = [
     path("", views.DashBoard, name="dashboard"),
     path('aboutus',views.aboutUs,name='aboutus'),
+    path('fellowship',views.fellowship, name='fellowship'),
     path("view_sermon/<int:sermon_id>/", views.view_sermon, name="view_sermon"),
+    path("sermon_detail/<int:id>/", views.Sermon_detail, name="sermon_detail"),
     path("see_request/", views.see_request),
     path("user_info/", views.user_info),
     path("private_place/", views.private_place),

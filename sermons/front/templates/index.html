@@ -6,58 +6,29 @@
             <div class="container">
                 <div class="text text-center text-lg-left">
                     <a href="" class="headline">
-                        <div class="badge badge-danger">New</div>
+                        <div class="badge badge-danger">New {{sermon.date_made}}</div>
                     </a>
-                    <h1>{{sermon.title}}</h1>
+                    <a href="sermon_detail/{{sermon.id}}" style="color:white !important;"><h1>{{sermon.title}}</h1></a>
                     <p class="lead">
                         {{sermon.subtitle|truncatewords:30 }}
                     </p>
-                    <div class="cta">
-                        <a class="btn btn-lg btn-danger btn-icon icon-right" href="{{sermon.audios}}" download>
-                            Download Sermon <i class="fas fa-chevron-right"></i></a> &nbsp;
-                        <div class="mt-3 text-job">
-                            {{sermon.author}}
-                        </div>
+
+                    <audio controls>
+                      <source src="{{sermon.audios.url}}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio>
+                    <div class="mt-3 text-job" style="color:#c6000e;">
+                        {{sermon.author}}
                     </div>
                 </div>
-                <div class="image d-none d-lg-block">
+                <div class="image d-lg-block">
                     <img src="doc/{{sermon.image}}" alt="img">
                 </div>
             </div>
         </div>
     </div>
-    <div class="callout container">
-        <div class="row">
-            {% for serm in sermons %}
-            <div class="col-lg-4 col-md-12 col-12 col-sm-12">
-                <div class="card__inner">
-                  <a class="card__shadow" data-segment="" data-segment-meta="null" href=""><div class="card__inner">
-                      <div class="card--resource__image--landscape">
-                      <img  width="100%" src="doc/{{serm.image}}" class=" lazyloaded">
-                      </div>
-                      <div class="card--resource__body">
-                          <h3 class="card--resource__subtitle">{{serm.title}}</h3>
-                          <div class="card--resource__date">{{serm.date_made}}</div>
-                          <div class="card--resource__text">
-                              {{serm.subtitle|truncatewords:50 }}
-                          </div>
-                      </div>
-                      <div class="card--resource__footer">
-                      <div class="card__author">
-                      <img class="card__author-image" src="doc/{{serm.author.image}}">
-                      <span class="card__author-text">
-                       {{serm.author}}
-                      </span>
-                      </div>
-                      </div>
-                      </div>
-                      </a>
-                </div>
-              </div>
-            {% endfor %}
-        </div>
-    </div>
-    <section id="features" style="padding-top:20px !important;padding-bottom:30px !important;">
+
+    <section id="features"  style="padding-top:190px !important;padding-bottom:20px !important;">
         <div class="container">
             <div class="row mb-5 text-center">
                 <div class="col-lg-10 offset-lg-1">
@@ -67,57 +38,56 @@
         </div>
     </section>
 
-    <section id="design" class="" style="margin-bottom:0px;padding-top:0px !important;">
+    <section id="design" style="margin-bottom:0px;padding-top:20px !important;">
         <div class="container">
             <div class="row">
                   {% for serm2 in sermon2 %}
-                <div class="col-lg-5 d-none d-lg-block">
-                    <img src="doc/{{serm2.image}}" alt="user flow" class="img-fluid">
+                <div class="col-lg-5 d-lg-block" style="margin-bottom:10px !important;">
+                    <img src="doc/{{serm2.image}}" style="margin-top:25px;" alt="user flow" class="img-fluid">
                 </div>
                 <div class="col-lg-7 pl-lg-5 col-md-12">
-                    <div class="badge badge-primary mb-3">{{serm2.category}}</div>
+                    <h1 class="sub-heading mb-2" style="float:left !important; margin-right:40px;color:#18264f !important ">{{serm2.category}}</h1>
+                    <p style="margin-top:-5px !important;font-size:13px !important;color:#c6000e !important">--- {{serm2.date_made}}</p>
+
+                    <div class="mt-3 text-job" style="color:#c6000e;text-transform:capitalize">
+                       By  {{serm2.author}}
+                    </div><br>
                     <h2>{{serm2.title}}</h2>
                     <p class="lead">
                         {{serm2.subtitle|truncatewords:50 }}
                     </p>
+
                     <div class="mt-4">
-                        <a href="" class="link-icon">
-                           {{serm.author}} <i class="fas fa-user"></i>
-                        </a>
-                    </div>
-                </div>
+                        <div class="button-box section-space--mt_60">
+                        <a href="sermon_detail/{{serm2.id}}" style="margin-top:25px;" class="btn btn--md btn--border_1">View More <i class="icon-arrow-right"></i></a>
+                   </div>
                 {% endfor %}
             </div>
         </div>
     </section>
 
-
-    <section id="try" class="" style="padding-top:10px !important;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 text-center">
-                     <h2>Christ is God’s Word incarnate,<span class="text-primary">the Bible is God’s Word written, </span> and authentic preaching is God’s Word voiced out </h2>
-                </div>
-            </div>
-        </div>
-    </section>
-
-   <section class="" style="margin-bottom:0px;padding-top:0px !important;">
+   <section style="margin-bottom:0px;padding-top:20px !important;">
         <div class="container">
             <div class="row">
                  {% for serm2 in sermon3 %}
                 <div class="col-lg-7 pl-lg-5 col-md-12">
-                    <div class="badge badge-primary mb-3">{{serm2.category}}</div>
+                     <h1 class="sub-heading mb-2" style="float:left !important; margin-right:40px;color:#18264f !important ">{{serm2.category}}</h1>
+                    <p style="margin-top:-5px !important;font-size:13px !important;color:#c6000e !important">--- {{serm2.date_made}}</p>
+
+                     <div class="mt-3 text-job" style="color:#c6000e;text-transform:capitalize">
+                       By  {{serm2.author}}
+                    </div><br>
                     <h2>{{serm2.title}}</h2>
                     <p class="lead">
                         {{serm2.subtitle|truncatewords:50 }}
                     </p>
                     <div class="mt-4">
-                        <a href="" class="link-icon">
-                           {{serm.author}} <i class="fas fa-user"></i>
-                        </a>
+                        <div class="button-box section-space--mt_60">
+                        <a href="sermon_detail/{{serm2.id}}" class="btn btn--md btn--border_1">View More <i class="icon-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-lg-5 d-none d-lg-block">
                     <img src="doc/{{serm2.image}}" alt="user flow" class="img-fluid">
                 </div>
@@ -125,49 +95,89 @@
             </div>
         </div>
     </section>
-    <div class="callout container">
-        <div class="row">
-            {% for serm in sermon5 %}
-        <div class="col-lg-3 col-md-12 col-12 col-sm-12">
-            <div class="card__inner">
-              <a class="card__shadow" data-segment="" data-segment-meta="null" href=""><div class="card__inner">
-                  <div class="card--resource__image--landscape">
-                  <img  width="100%" src="doc/{{serm.image}}" class=" lazyloaded">
-                  </div>
-                  <div class="card--resource__body">
-                      <h3 class="card--resource__subtitle">{{serm.title}}</h3>
-                      <div class="card--resource__date">{{serm.date_made}}</div>
-                      <div class="card--resource__text">
-                          {{serm.subtitle|truncatewords:50 }}
-                      </div>
-                  </div>
-                  <div class="card--resource__footer">
-                  <div class="card__author">
-                  <img class="card__author-image" src="doc/{{serm.author.image}}">
-                  <span class="card__author-text">
-                   {{serm.author}}
-                  </span>
-                  </div>
-                  </div>
-                  </div>
-                  </a>
+
+    <section id="try" class="section-dark" style="maring-bottom:40px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+
+                    <h2><span style="color:#c6000e !important;">Christ</span> is God’s Word incarnate,<span style="color:#c6000e !important;">the Bible</span> is God’s Word written, and <span style="color:#c6000e !important;">authentic preaching</span> is God’s Word voiced out </h2>
+                </div>
             </div>
-          </div>
-        {% endfor %}
         </div>
-    </div>
-    <div class="callout container">
+    </section>
+
+      <section class="" style="margin-bottom:0px;">
+        <div class="container">
+            <div class="row">
+                 {% for serm2 in sermon4 %}
+
+                <div class="col-lg-7 pl-lg-5 col-md-12">
+                    <h1 class="sub-heading mb-2" style="float:left !important; margin-right:40px;color:#18264f !important ">{{serm2.category}}</h1>
+                    <p style="margin-top:-5px !important;font-size:13px !important;color:#c6000e !important">--- {{serm2.date_made}}</p>
+
+                     <div class="mt-3 text-job" style="color:#c6000e;text-transform:capitalize">
+                       By  {{serm2.author}}
+                    </div><br>
+                    <h2>{{serm2.title}}</h2>
+                    <p class="lead">
+                        {{serm2.subtitle|truncatewords:50 }}
+                    </p>
+                    <div class="mt-4">
+                        <div class="button-box section-space--mt_60">
+                        <a href="sermon_detail/{{serm2.id}}" class="btn btn--md btn--border_1">View More <i class="icon-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <img src="doc/{{serm2.image}}" style="margin-top:25px;" alt="user flow" class="img-fluid">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section id="design2" class="" style="margin-bottom:0px;padding-top:0px !important;">
+        <div class="container">
+            <div class="row">
+                  {% for serm2 in sermon5 %}
+                  <div class="col-lg-5 d-lg-block">
+                    <img src="doc/{{serm2.image}}" style="" alt="user flow" class="img-fluid">
+                  </div>
+                  <div class="col-lg-7 pl-lg-5 col-md-12">
+                     <h1 class="sub-heading mb-2" style="float:left !important; margin-right:40px;color:#18264f !important ">{{serm2.category}}</h1>
+                    <p style="margin-top:-5px !important;font-size:13px !important;color:#c6000e !important">--- {{serm2.date_made}}</p>
+
+                     <div class="mt-3 text-job" style="color:#c6000e;text-transform:capitalize">
+                       By  {{serm2.author}}
+                    </div><br>
+                    <h2>{{serm2.title}}</h2>
+                    <p class="lead">
+                        {{serm2.subtitle|truncatewords:50 }}
+                    </p>
+                    <div class="mt-4">
+                        <div class="button-box section-space--mt_60">
+                        <a href="sermon_detail/{{serm2.id}}" class="btn btn--md btn--border_1">View More <i class="icon-arrow-right"></i></a>
+                        </div>
+                    </div>
+                  </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+   <div class="callout container">
         <div class="row">
             {% for serm in sermon6 %}
         <div class="col-lg-3 col-md-12 col-12 col-sm-12">
             <div class="card__inner">
-              <a class="card__shadow" data-segment="" data-segment-meta="null" href=""><div class="card__inner">
+              <a class="card__shadow" data-segment="" data-segment-meta="null" href="sermon_detail/{{serm.id}}"><div class="card__inner">
                   <div class="card--resource__image--landscape">
-                  <img  width="100%" src="doc/{{serm.image}}" class=" lazyloaded">
+                  <img  width="100%" src="doc/{{serm.image}}" style="" class=" lazyloaded">
                   </div>
                   <div class="card--resource__body">
-                      <h3 class="card--resource__subtitle">{{serm.title}}</h3>
-                      <div class="card--resource__date">{{serm.date_made}}</div>
+                      <h3 class="card--resource__subtitle" style="color:#18264f !important">{{serm.title}}</h3>
+                      <div class="card--resource__date" style="color:#c6000e !important">{{serm.date_made}}</div>
                       <div class="card--resource__text">
                           {{serm.subtitle|truncatewords:50 }}
                       </div>
@@ -187,4 +197,12 @@
         {% endfor %}
         </div>
     </div>
+
+   <div class="callout container">
+        <div class="row">
+            <div class="col-md-8">
+
+            </div>
+        </div>
+   </div>
 {% endblock %}

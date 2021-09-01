@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block page_content %}
+<div class="hero-mini pb">
+    <div class="container">
+        <div class="row align-items-center text-center">
+            <div class="col-lg-8 offset-lg-2">
+                <h1>{{sermon.title}}</h1><br>
+                <audio controls>
+                  <source src="{{sermon.audios.url}}" type="audio/mpeg">
+                Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="hero-mini-up">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 ">
+                <article class="article article-detail">
+                    <div class="p-5">
+                        <div class="article-metas">
+                            <div class="article-meta">By <a href="javascript:;">{{sermon.author}}</a></div>
+                            <div class="article-meta">{{sermon.date_made}}</div>
+                        </div>
+                        <div class="article-description">
+                            {{sermon.description|safe}}
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

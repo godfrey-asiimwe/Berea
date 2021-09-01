@@ -48,3 +48,15 @@ class Sermon(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class subscribe(models.Model):
+    email = models.CharField(max_length=500)
+    created_on = models.DateField(auto_now=True)
+    updated_on = models.DateField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created_on']
+
+    def __str__(self):
+        return self.email
